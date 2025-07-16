@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FastAPI RBAC Demo</title>
+  <link rel="stylesheet" href="static/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>FastAPI RBAC Demo</h1>
+
+    <label for="token">Select User Role:</label>
+    <select id="token">
+      <option value="alice-token">Alice (Admin)</option>
+      <option value="bob-token">Bob (User)</option>
+      <option value="carol-token">Carol (Editor)</option>
+      <option value="john-token">John (Viewer)</option>
+    </select>
+
+    <button onclick="callAPI('/protected')">Access /protected</button>
+    <button onclick="callAPI('/admin-only')">Access /admin-only</button>
+    <button onclick="callAPI('/editor-only')">Access /editor-only</button>
+    <button onclick="callAPI('/viewer-only')">Access /viewer-only</button>
+
+    <div id="response" class="output"></div>
+  </div>
+
+  <script src="static/app.js"></script>
+</body>
+</html>
