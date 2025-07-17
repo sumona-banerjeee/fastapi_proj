@@ -1,17 +1,7 @@
-function callAPI(endpoint) {
-  const token = document.getElementById("token").value;
-  const url = window.location.origin + endpoint;
+console.log("FastAPI RBAC Frontend loaded.");
 
-  fetch(url, {
-    headers: {
-      "Authorization": token
-    }
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      document.getElementById("response").innerText = JSON.stringify(data, null, 2);
-    })
-    .catch((err) => {
-      document.getElementById("response").innerText = "Error: " + err;
-    });
-}
+// Example: Show an alert when the page loads
+window.addEventListener("load", () => {
+  // Uncomment to test:
+  // alert("Welcome to FastAPI RBAC!");
+});
